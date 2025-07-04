@@ -6,5 +6,8 @@ Future<void> inits() async {
   Serv.sample.init();
   Serv.product.init();
 
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   logx.wtf('inits success');
 }
