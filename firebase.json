@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"firestore":{"database":"(default)","location":"nam5","rules":"firestore.rules","indexes":"firestore.indexes.json"},"flutter":{"platforms":{"android":{"default":{"projectId":"indah-fb","appId":"1:3679278244:android:31eb5b5dd70067a1f24231","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"indah-fb","configurations":{"android":"1:3679278244:android:31eb5b5dd70067a1f24231","web":"1:3679278244:web:fa9b796a58d6c9d6f24231"}}}}}}
+=======
+{"firestore":{"database":"(default)","location":"nam5","rules":"firestore.rules","indexes":"firestore.indexes.json"},"flutter":{"platforms":{"android":{"default":{"projectId":"indah-fb","appId":"1:3679278244:android:560343d1b8d1b3aaf24231","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"indah-fb","configurations":{"android":"1:3679278244:android:560343d1b8d1b3aaf24231","web":"1:3679278244:web:3250b27fe12f5c4af24231"}}}}}}
+>>>>>>> dev
