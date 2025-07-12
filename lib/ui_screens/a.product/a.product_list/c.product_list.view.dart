@@ -18,7 +18,7 @@ class ProductListView extends StatelessWidget {
             ...List.generate(
               data.length,
               (index) => Card(
-                child: ListTile(title: Text(data[index].name), subtitle: Text(data[index].price.toString())),
+                child: ListTile(title: Text(data[index].name), subtitle: Text(data[index].id)),
               ),
             ),
           ],

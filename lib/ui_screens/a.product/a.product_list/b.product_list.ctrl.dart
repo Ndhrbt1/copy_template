@@ -23,4 +23,17 @@ class ProductListCtrl {
   readList() async {
     _dt.rxProductList.stateAsync = getColl();
   }
+
+  Future<void> createDoc() async {
+    final product = Product(
+      id: UniqueKey().toString(),
+      name: generateWordPairs().take(2).join(' '),
+      price: Random().nextInt(99999),
+      qty: Random().nextInt(99),
+      createdAt: DateTime.now().toString(),
+    );
+    FirebaseFirestore.instance.collection('product').doc(product.id).set(product.toMap());
+    _dt.rxProductList.st = [..._dt.rxProductList.st]..insert(0, product);
+    debugPrint(product.toString());
+  }
 }

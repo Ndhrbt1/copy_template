@@ -17,6 +17,7 @@ dependencies:
   navigation_builder: ^0.0.4
   firebase_core: ^3.15.0
   cloud_firestore: ^5.6.11
+  english_words: ^4.0.0
 
 dev_dependencies:
   flutter_test:
