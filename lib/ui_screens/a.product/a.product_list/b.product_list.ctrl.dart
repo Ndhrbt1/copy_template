@@ -36,4 +36,27 @@ class ProductListCtrl {
     _dt.rxProductList.st = [..._dt.rxProductList.st]..insert(0, product);
     debugPrint(product.toString());
   }
+
+  Future<void> updateDoc(Product product) async {
+    final productEdit = Product(
+      id: product.id,
+      name: 'product edited ',
+      price: product.price,
+      qty: 10,
+      createdAt: product.createdAt,
+      updatedAt: DateTime.now().toString(),
+    );
+    FirebaseFirestore.instance.collection('product').doc(productEdit.id).set(productEdit.toMap());
+    _dt.rxProductList.setState((s) {
+      final index = _dt.rxProductList.st.indexWhere((element) => element.id == product.id);
+      return s[index] = productEdit;
+    });
+    debugPrint('product has been edited');
+  }
+
+  Future<void> deleteDoc(String id) async {
+    FirebaseFirestore.instance.collection('product').doc(id).delete();
+    _dt.rxProductList.st = [..._dt.rxProductList.st]..removeWhere((element) => element.id == id);
+    debugPrint('product has been deleted');
+  }
 }
