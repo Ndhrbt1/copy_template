@@ -11,4 +11,6 @@ class ProductListData {
     () => Future.value([]),
     sideEffects: SideEffects(initState: () => _ct.readList()),
   );
+
+  final rxProductDetail = RM.injectFuture<Product?>(() => Future.value(null));
 }

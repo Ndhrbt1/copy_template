@@ -24,6 +24,16 @@ class ProductListCtrl {
     _dt.rxProductList.stateAsync = getColl();
   }
 
+  Future<Product?> getDoc(String id) async {
+    final readDoc = await FirebaseFirestore.instance.collection('product').doc(id).get();
+    debugPrint(readDoc.data().toString());
+    return Product.fromMap(readDoc.data() ?? {});
+  }
+
+  readDoc(String id) {
+    _dt.rxProductDetail.stateAsync = getDoc(id);
+  }
+
   Future<void> createDoc() async {
     final product = Product(
       id: UniqueKey().toString(),
