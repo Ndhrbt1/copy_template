@@ -7,10 +7,9 @@ class ProductListData {
 
   final rxRandom = Prov.sample.st.rxRandom;
 
-  final rxProductList = RM.injectFuture<List<Product>>(
-    () => Future.value([]),
-    sideEffects: SideEffects(initState: () => _ct.readList()),
-  );
+  final rxProductList = _pv.rxProductList;
 
-  final rxProductDetail = RM.injectFuture<Product?>(() => Future.value(null));
+  final rxProductDetail = _pv.rxProductDetail;
+
+  final rxSelectedId = _pv.rxSelectedId;
 }

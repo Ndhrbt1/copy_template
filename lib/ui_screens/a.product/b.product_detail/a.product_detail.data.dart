@@ -6,4 +6,7 @@ class ProductDetailData {
   final rxCounter = 0.inj();
 
   final rxRandom = Prov.sample.st.rxRandom;
+
+  final rxSelectedId = _pv.rxSelectedId;
+  final rxProductDetail = _pv.rxProductDetail;
 }

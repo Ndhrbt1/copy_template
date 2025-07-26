@@ -7,4 +7,29 @@ class ProductRepoMock implements ProductRepo {
     logz.wtf('random value coming from ProductRepoMock');
     return x;
   }
+
+  @override
+  Future<void> createDoc(Product product) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> deleteDoc(String id) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Product>> getColl() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Product?> getDoc() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> updateDoc(Product productEdit) {
+    throw UnimplementedError();
+  }
 }

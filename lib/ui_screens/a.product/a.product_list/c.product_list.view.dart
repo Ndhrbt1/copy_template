@@ -38,25 +38,11 @@ class ProductListView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onTap: () => _ct.readDoc(data[index].id),
+                  onTap: () {
+                    _ct.setSelectedId(data[index].id);
+                    nav.to(Routes.productDetail);
+                  },
                 ),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-            Text('PRODUCT DETAIL'),
-            const SizedBox(height: 20),
-            OnBuilder.data(
-              listenTo: _dt.rxProductDetail,
-              builder: (data) => Column(
-                children: [
-                  Text('${data?.id}'),
-                  Text('${data?.name}'),
-                  Text('${data?.price}'),
-                  Text('${data?.qty}'),
-                  Text('${data?.createdAt}'),
-                  Text('${data?.updatedAt}'),
-                ],
               ),
             ),
           ],
