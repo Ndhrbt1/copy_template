@@ -20,17 +20,6 @@ class ProductListCtrl {
     _sv.readDoc();
   }
 
-  Future<void> createDoc() async {
-    final product = Product(
-      id: UniqueKey().toString(),
-      name: generateWordPairs().take(2).join(' '),
-      price: Random().nextInt(99999),
-      qty: Random().nextInt(99),
-      createdAt: DateTime.now().toString(),
-    );
-    _sv.createDoc(product);
-  }
-
   Future<void> updateDoc(Product product) async {
     final productEdit = Product(
       id: product.id,
