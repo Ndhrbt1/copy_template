@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:copy_template/dt_domains/_models/_index.dart';
+import 'package:copy_template/dt_domains/a.product/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -17,4 +19,5 @@ part 'widgets/e.product_edit.echo.dart';
 
 ProductEditData get _dt => Data.productEdit.st;
 ProductEditCtrl get _ct => Ctrl.productEdit;
-
+ProductProv get _pv => Prov.product.st;
+ProductServ get _sv => Serv.product;

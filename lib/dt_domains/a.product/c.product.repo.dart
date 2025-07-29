@@ -23,7 +23,8 @@ class ProductRepo {
   Future<Product?> getDoc() async {
     final readDoc = await FirebaseFirestore.instance.collection('product').doc(_pv.rxSelectedId.st).get();
     debugPrint(readDoc.data().toString());
-    return Product.fromMap(readDoc.data() ?? {});
+    final read = Product.fromMap(readDoc.data() ?? {});
+    return read;
   }
 
   Future<void> createDoc(Product product) async {

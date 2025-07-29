@@ -8,5 +8,6 @@ class ProductDetailData {
   final rxRandom = Prov.sample.st.rxRandom;
 
   final rxSelectedId = _pv.rxSelectedId;
+
   final rxProductDetail = _pv.rxProductDetail;
 }

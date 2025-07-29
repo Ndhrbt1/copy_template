@@ -5,20 +5,63 @@ class ProductEditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56),
-        child: ProductEditAppbar(),
-      ),
+    return Scaffold(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(56), child: ProductEditAppbar()),
       floatingActionButton: ProductEditFab(),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ProductEditCharlie(),
-            ProductEditDelta(),
-            ProductEditEcho(),
-          ],
+        child: SizedBox(
+          width: 480,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OnFormBuilder(
+                listenTo: _dt.rxForm,
+                builder: () => TextField(
+                  controller: _dt.rxName.st.controller,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'name',
+                    errorText: _dt.rxName.error,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              OnFormBuilder(
+                listenTo: _dt.rxForm,
+                builder: () => TextField(
+                  controller: _dt.rxPrice.st.controller,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'price',
+                    errorText: _dt.rxPrice.error,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              OnFormBuilder(
+                listenTo: _dt.rxForm,
+                builder: () => TextField(
+                  controller: _dt.rxQty.st.controller,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'quantity',
+                    errorText: _dt.rxQty.error,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              OnFormSubmissionBuilder(
+                listenTo: _dt.rxForm,
+                onSubmitting: () => CircularProgressIndicator(),
+                child: ElevatedButton(
+                  onPressed: () {
+                    _ct.submit();
+                  },
+                  child: Text("submit"),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

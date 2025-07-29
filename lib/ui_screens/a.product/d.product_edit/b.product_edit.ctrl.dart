@@ -6,4 +6,20 @@ class ProductEditCtrl {
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
   updateRandom() => Serv.sample.updateRandom();
+
+  Future<void> updateDoc() async {
+    final productEdit = Product(
+      id: _dt.rxProductDetail.st!.id,
+      name: _dt.rxName.st.value,
+      price: int.parse(_dt.rxPrice.st.value),
+      qty: int.parse(_dt.rxQty.st.value),
+      createdAt: _dt.rxProductDetail.st!.createdAt,
+      updatedAt: DateTime.now().toString(),
+    );
+
+    _sv.updateDoc(productEdit);
+    nav.back();
+  }
+
+  submit() async => _dt.rxForm.submit();
 }

@@ -33,6 +33,7 @@ class ProductServ {
 
   Future<void> updateDoc(Product productEdit) async {
     _rp.updateDoc(productEdit);
+    _pv.rxProductDetail.setState((s) => productEdit);
     _pv.rxProductList.setState((s) {
       final index = _pv.rxProductList.st.indexWhere((element) => element.id == productEdit.id);
       return s[index] = productEdit;
