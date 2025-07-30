@@ -7,13 +7,32 @@ class ProductAddView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(preferredSize: Size.fromHeight(56), child: ProductAddAppbar()),
-      floatingActionButton: ProductAddFab(),
+      // floatingActionButton: ProductAddFab(),
       body: Center(
         child: SizedBox(
           width: 480,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              OnReactive(
+                () => Column(
+                  children: [
+                    _dt.rxPickedImage.st == null
+                        ? Card(
+                            child: SizedBox(height: 100, width: 100, child: Center(child: Text('No Image'))),
+                          )
+                        : SizedBox(height: 100, width: 100, child: Image.network(_dt.rxPickedImage.st!.path)),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        _ct.pickImage();
+                      },
+                      child: Text("Pick Image"),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
               OnFormBuilder(
                 listenTo: _dt.rxForm,
                 builder: () => TextField(

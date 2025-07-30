@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:copy_template/dt_domains/_models/_index.dart';
 import 'package:copy_template/dt_domains/a.product/_index.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
