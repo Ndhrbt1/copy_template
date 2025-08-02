@@ -37,6 +37,7 @@ class ProductRepo {
 
   Future<void> deleteDoc(String id) async {
     FirebaseFirestore.instance.collection('product').doc(id).delete();
+    deleteImage(id);
   }
 
   Future<String> uploadImage(String id) async {
@@ -44,5 +45,10 @@ class ProductRepo {
     final contentType = _pv.rxPickedImage.st?.mimeType;
     final url = await FirebaseStorage.instance.ref(id).putData(data, SettableMetadata(contentType: contentType));
     return await url.ref.getDownloadURL();
+  }
+
+  Future<void> deleteImage(String id) async {
+    FirebaseStorage.instance.ref(id).delete();
+    debugPrint('image has been deleted');
   }
 }
