@@ -24,7 +24,7 @@ class ProductAddView extends StatelessWidget {
                         : SizedBox(height: 100, width: 100, child: Image.network(_dt.rxPickedImage.st!.path)),
                     const SizedBox(height: 10),
                     ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         _ct.pickImage();
                       },
                       child: Text("Pick Image"),

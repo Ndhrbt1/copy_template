@@ -18,4 +18,8 @@ class ProductProv {
   );
 
   final rxSelectedId = RM.inject(() => '');
+
+  final rxImageUrl = RM.inject(() => '');
+
+  final rxPickedImage = RM.inject<XFile?>(() => null);
 }

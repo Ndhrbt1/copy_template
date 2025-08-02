@@ -46,4 +46,8 @@ class ProductServ {
     _pv.rxProductList.st = [..._pv.rxProductList.st]..removeWhere((element) => element.id == id);
     debugPrint('product has been deleted');
   }
+
+  uploadImage(String id) async {
+    return await _rp.uploadImage(id);
+  }
 }

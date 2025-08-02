@@ -19,6 +19,7 @@ class ProductListView extends StatelessWidget {
               data.length,
               (index) => Card(
                 child: ListTile(
+                  leading: SizedBox(width: 50, child: Image.network(data[index].imageUrl)),
                   title: Text(data[index].name),
                   subtitle: Text(data[index].id),
                   trailing: Row(
