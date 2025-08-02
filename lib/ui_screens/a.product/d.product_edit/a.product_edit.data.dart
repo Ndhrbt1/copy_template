@@ -35,4 +35,6 @@ class ProductEditData {
       text: '${_dt.rxProductDetail.st?.qty}',
     ),
   );
+
+  final rxPickedImage = _pv.rxPickedImage;
 }

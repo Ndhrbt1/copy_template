@@ -50,4 +50,14 @@ class ProductServ {
   uploadImage(String id) async {
     return await _rp.uploadImage(id);
   }
+
+  Future<XFile?> pickImage() async {
+    _pv.rxPickedImage.st = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    debugPrint(_pv.rxPickedImage.st?.mimeType);
+    debugPrint(_pv.rxPickedImage.st?.name);
+    debugPrint(_pv.rxPickedImage.st?.path);
+
+    return _pv.rxPickedImage.st;
+  }
 }

@@ -24,11 +24,7 @@ class ProductAddCtrl {
   }
 
   Future<XFile?> pickImage() async {
-    _dt.rxPickedImage.st = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    debugPrint(_dt.rxPickedImage.st?.mimeType);
-    debugPrint(_dt.rxPickedImage.st?.name);
-    debugPrint(_dt.rxPickedImage.st?.path);
+    _sv.pickImage();
 
     return _dt.rxPickedImage.st;
   }
