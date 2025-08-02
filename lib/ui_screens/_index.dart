@@ -10,3 +10,5 @@ export 'a.product/a.product_list/_index.dart';
 export 'a.product/b.product_detail/_index.dart';
 export 'a.product/c.product_add/_index.dart';
 export 'a.product/d.product_edit/_index.dart';
+export 'b.login/_index.dart';
+export 'c.register/_index.dart';

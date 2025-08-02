@@ -12,5 +12,6 @@ class Mocks {
   injectMocks() {
     Repo.sample.injectMock(() => SampleRepoMock());
     Repo.product.injectMock(() => ProductRepoMock());
+    Repo.auth.injectMock(() => AuthRepoMock());
   }
 }

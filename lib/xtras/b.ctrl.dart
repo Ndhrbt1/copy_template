@@ -9,4 +9,6 @@ abstract class Ctrl {
   static ProductDetailCtrl get productDetail => ProductDetailCtrl();
   static ProductAddCtrl get productAdd => ProductAddCtrl();
   static ProductEditCtrl get productEdit => ProductEditCtrl();
+  static LoginCtrl get login => LoginCtrl();
+  static RegisterCtrl get register => RegisterCtrl();
 }
