@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:copy_template/dt_domains/b.auth/_index.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -17,4 +19,4 @@ part 'widgets/e.login.echo.dart';
 
 LoginData get _dt => Data.login.st;
 LoginCtrl get _ct => Ctrl.login;
-
+AuthServ get _sv => Serv.auth;
