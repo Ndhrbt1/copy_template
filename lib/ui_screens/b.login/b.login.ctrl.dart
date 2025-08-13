@@ -1,7 +1,10 @@
 part of '_index.dart';
 
 class LoginCtrl {
-  init() => logxx.i(LoginCtrl, '...');
+  init() {
+    logxx.i(LoginCtrl, '...');
+    debugPrint('hi aku login');
+  }
 
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
@@ -16,7 +19,9 @@ class LoginCtrl {
   }
 
   Future<UserCredential> signInEP() async {
-    return _sv.signInEP(_dt.rxEmail.value, _dt.rxPassword.value);
+    final userCredential = await _sv.signInEP(_dt.rxEmail.value, _dt.rxPassword.value);
+    _pv.rxUser.setState((s) => userCredential.user);
+    return userCredential;
   }
 
   Future<void> signOut() async {

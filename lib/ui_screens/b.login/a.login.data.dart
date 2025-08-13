@@ -10,6 +10,10 @@ class LoginData {
   final rxForm = RM.injectForm(
     autovalidateMode: AutovalidateMode.onUserInteraction,
     submit: () async {
+      // User? user;
+      // _sv.responseAuthStates(user);
+
+      debugPrint('Login berhasil, state diperbarui secara manual.');
       await _ct.signInEP();
     },
   );

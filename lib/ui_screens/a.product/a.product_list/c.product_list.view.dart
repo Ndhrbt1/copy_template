@@ -40,6 +40,20 @@ class ProductListView extends StatelessWidget {
                 ),
               ),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+                _sva.deleteAccount();
+              },
+              child: Text("Delete Button"),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                _sva.signOut();
+              },
+              child: Text("SignOut Button"),
+            ),
           ],
         ),
       ),

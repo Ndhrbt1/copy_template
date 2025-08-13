@@ -7,8 +7,11 @@ class AuthProv {
     sideEffects: SideEffects(onSetState: (p0) => _sv.onSetState()),
   );
 
-  // final rxUser = RM.injectStream<User?>(
-  //   () => Stream.value(null),
-  //   sideEffects: SideEffects.onData((data) async => await _sv.responseAuthStates(data)),
-  // );
+  final rxUser = RM.injectStream<User?>(
+    () => FirebaseAuth.instance.authStateChanges(),
+    autoDisposeWhenNotUsed: false,
+    sideEffects: SideEffects.onData((data) async {
+      await _sv.responseAuthStates(data);
+    }),
+  );
 }

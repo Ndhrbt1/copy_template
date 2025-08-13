@@ -20,3 +20,4 @@ part 'widgets/e.register.echo.dart';
 RegisterData get _dt => Data.register.st;
 RegisterCtrl get _ct => Ctrl.register;
 AuthServ get _sv => Serv.auth;
+// AuthProv get _pva => Prov.auth.st;

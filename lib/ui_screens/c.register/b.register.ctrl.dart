@@ -1,7 +1,10 @@
 part of '_index.dart';
 
 class RegisterCtrl {
-  init() => logxx.i(RegisterCtrl, '...');
+  init() {
+    logxx.i(RegisterCtrl, '...');
+    debugPrint('hi aku regist');
+  }
 
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
